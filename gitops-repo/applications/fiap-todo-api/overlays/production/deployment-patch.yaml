@@ -3,18 +3,11 @@ kind: Deployment
 metadata:
   name: fiap-todo-api
 spec:
-  replicas: 3
+  replicas: 5  # Era 3, agora 5!
   template:
     spec:
       containers:
-      - name: fiap-todo-api
-        env:
-        - name: NODE_ENV
-          value: "production"
-        - name: ENVIRONMENT
-          value: "production"
-        - name: DEPLOYMENT_TYPE
-          value: "gitops-production"
+      - name: api
         resources:
           requests:
             memory: "256Mi"
